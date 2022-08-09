@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    @media all {
+      *{
+        padding: 0;
+        margin: 0;
+        border: 0;
+        outline: 0;
+        box-sizing: border-box;
+        font-family:Lato;
+        font-size:16px;
+        text-decoration:none;
+      }
+      *::after{
+        padding: 0;
+        margin: 0;
+        border: 0;
+        outline: 0;
+        box-sizing: border-box;
+      }
+      *::before{
+        padding: 0;
+        margin: 0;
+        border: 0;
+        outline: 0;
+        box-sizing: border-box; 
+      }
+    }
+    .cont{
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 12px;
+      padding: 12px;
+    }
+    img{
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="cont">
+    <img src="../../Start Mart/Escritorio/escritorio (26).jpg" alt="">
+  </div>
+  <script>
+    let mst = document.querySelector('.cont');
+    function img(src) {  
+      const imgs = document.createElement("img");
+      imgs.setAttribute("src",src);
+      imgs.setAttribute("loading","lazy");
+      mst.appendChild(imgs);
+    }
+    for (let i = 1; i < 40; i++) {
+      setTimeout(() => {
+        img(`../../Start Mart/Escritorio/escritorio (${i}).jpg`);
+      }, i*100);
+    }
+  </script>
+</body>
+</html>
